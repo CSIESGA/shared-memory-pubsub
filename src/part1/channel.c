@@ -362,7 +362,7 @@ void subscriber_node(char *channel_name, consume_function_type cf, void *cookie)
         }
 
         pthread_mutex_unlock(&ch->mtx);
-    }       
+    }           
 
     __builtin_unreachable();
 }
