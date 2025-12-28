@@ -347,8 +347,7 @@ void subscriber_node(char *channel_name, consume_function_type cf, void *cookie)
         if (ch->refcnt[slot] == 0) {
             /* Last consumer: reclaim buffer slot */
             ch->state[slot] = SLOT_FREE;
-            ch->free_stack[++ch->free_top] = slot;
-
+            ch->free_stack[++ch->free_top] = slot;        
             /* We can optionally advance seq_head when the reclaimed message
              * matches the current head. (Not strictly needed for correctness
              * under TA guarantees, but keeps seq_head meaningful.)
