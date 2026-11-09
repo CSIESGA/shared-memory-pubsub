@@ -1,6 +1,15 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/91VDzfCQ)
-# SP2025_HW4_release
+# Shared-Memory Publish/Subscribe in C
 
-## [SPEC Link](https://hackmd.io/bMwW-hEMTveKeqPImO9bhQ)
+A publish/subscribe channel that passes messages between Unix processes through memory-mapped shared storage. Process-shared POSIX mutexes and condition variables coordinate publishers, subscribers, and the reuse of message slots.
 
-## [Video Link]()
+The repository includes a file publisher that sends chunks through the channel and a multithreaded subscriber that computes a SHA-256 Merkle root from the received chunks.
+
+## Build
+
+From the repository root on Linux with GCC and Make installed:
+
+```sh
+make P1=src/part1 P2=src/part2
+```
+
+This builds `build/file_publisher` and `build/merkle_subscriber`.
